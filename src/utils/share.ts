@@ -22,10 +22,30 @@ export const generateEmojiGrid = (guesses: string[]): string =>
     .join('\n')
     .trim();
 
-export const shareStatus = (guesses: string[], lost: boolean): void => {
-  navigator.clipboard.writeText(
-    ` WAFCLE ${solutionIndex + 1} ${
-      lost ? 'X' : guesses.length
-    }/6\n\n${generateEmojiGrid(guesses)}\n#wafc #wafcle \nhttps://wafcle.com`
-  );
+export const shareStatus = (
+  guesses: string[],
+  lost: boolean,
+  handleShare: () => void
+): void => {
+  const shareString = ` WAFCLE ${solutionIndex + 1} ${
+    lost ? 'X' : guesses.length
+  }/6\n\n${generateEmojiGrid(guesses)}\n#wafc #wafcle \nhttps://wafcle.com`;
+  if (navigator.share) {
+    navigator
+      .share({
+        title: `WAFCLE ${solutionIndex + 1}`,
+        text: `WAFCLE ${solutionIndex + 1}`,
+        url: shareString,
+      })
+      .then(() => {
+        handleShare();
+      })
+      .catch(() => {
+        navigator.clipboard.writeText(shareString);
+        handleShare();
+      });
+  } else {
+    navigator.clipboard.writeText(shareString);
+    handleShare();
+  }
 };

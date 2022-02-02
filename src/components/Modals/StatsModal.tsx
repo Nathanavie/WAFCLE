@@ -78,8 +78,7 @@ const StatsModal = ({
             <Button
               type="button"
               onClick={() => {
-                shareStatus(guesses, isGameLost);
-                handleShare();
+                shareStatus(guesses, isGameLost, handleShare);
               }}
               endIcon={<ShareIcon />}
             >
