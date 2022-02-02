@@ -34,8 +34,7 @@ export const shareStatus = (
     navigator
       .share({
         title: `WAFCLE ${solutionIndex + 1}`,
-        text: `WAFCLE ${solutionIndex + 1}`,
-        url: shareString,
+        text: shareString,
       })
       .then(() => {
         handleShare();
