@@ -127,6 +127,7 @@ const App = (): ReactElement => {
             openInfoModal={(state: boolean) => setIsInfoModalOpen(state)}
             openStatsModal={(state: boolean) => setIsStatsModalOpen(state)}
             openHintModal={(state: boolean) => setIsHintModalOpen(state)}
+            guesses={guesses}
           />
           <Grid
             guesses={guesses}

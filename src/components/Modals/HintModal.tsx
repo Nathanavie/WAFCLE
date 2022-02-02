@@ -24,7 +24,7 @@ const style = {
 };
 
 const HintModal = ({ isOpen, handleClose }: HintModalProps): ReactElement => (
-  <Modal className="modal" open={isOpen} onClose={handleClose}>
+  <Modal className="modal hintModal" open={isOpen} onClose={handleClose}>
     <Box sx={style}>
       <header className="modalHeader">
         <h2>Need a hint?</h2>
@@ -39,6 +39,10 @@ const HintModal = ({ isOpen, handleClose }: HintModalProps): ReactElement => (
         <p>{solutionInfo.position}</p>
         <h3>Which squad are they in?</h3>
         <p>{solutionInfo.team}</p>
+        <p>
+          They last played for Wigan in the
+          <span className="bold"> {solutionInfo.mostRecentYear} </span> season
+        </p>
       </Typography>
     </Box>
   </Modal>

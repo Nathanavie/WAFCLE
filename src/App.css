@@ -109,6 +109,13 @@
 .helpSection {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.helpSection .hintButton {
+  background: #091021;
+  padding: 0.3em 3em;
 }
 
 .helpSection,
@@ -296,6 +303,13 @@
 
 .large {
   font-size: 1.2em;
+}
+
+.hintModal h3 {
+  margin-bottom: 0;
+}
+.hintModal p {
+  margin-top: 5px;
 }
 
 @media (max-width: 768px) {
