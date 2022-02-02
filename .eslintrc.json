@@ -21,6 +21,7 @@
   },
   "rules": {
     "no-shadow": "off",
+    "react/no-array-index-key": "off",
     "@typescript-eslint/no-shadow": ["error"],
     "react/jsx-props-no-spreading": "off",
     "no-use-before-define": "off",
