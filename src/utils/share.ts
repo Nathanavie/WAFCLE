@@ -24,8 +24,8 @@ export const generateEmojiGrid = (guesses: string[]): string =>
 
 export const shareStatus = (guesses: string[], lost: boolean): void => {
   navigator.clipboard.writeText(
-    ` #wafc #wafcle \n WAFCLE ${solutionIndex + 1} ${
+    ` WAFCLE ${solutionIndex + 1} ${
       lost ? 'X' : guesses.length
-    }/6\n\n${generateEmojiGrid(guesses)}`
+    }/6\n\n${generateEmojiGrid(guesses)}\n#wafc #wafcle \nhttps://wafcle.com`
   );
 };
