@@ -11,6 +11,7 @@ import { solutionIndex, solution, tomorrow } from '../../utils/wordUtils';
 import { shareStatus } from '../../utils/share';
 import StatBar from '../Stats/StatBar';
 import Histogram from '../Stats/Histogram';
+import gameSettings from '../../constants/gameSettings';
 
 interface StatsModalProps {
   isOpen: boolean;
@@ -27,7 +28,6 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  color: '#ffffff',
   width: 400,
   bgcolor: '#0f172a',
   border: '2px solid #000',
@@ -67,7 +67,8 @@ const StatsModal = ({
         <Typography>
           {(isGameLost || isGameWon) && (
             <h4 className="bold center">
-              WAFCLE {solutionIndex + 1} answer: {solution}
+              {gameSettings.TeamAbbreviation}LE {solutionIndex + 1} answer:{' '}
+              {solution}
             </h4>
           )}
           <StatBar gameStats={gameStats} />
@@ -77,7 +78,7 @@ const StatsModal = ({
         {(isGameLost || isGameWon) && (
           <section className="modalFooter">
             <section className="newWord">
-              <h5>NEXT WAFCLE</h5>
+              <h5>NEXT {gameSettings.TeamAbbreviation}LE</h5>
               <Countdown className="countdown" date={tomorrow} daysInHours />
             </section>
             <Button

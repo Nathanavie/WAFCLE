@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { GameStats } from '../../utils/localStorage';
+import gameSettings from '../../constants/gameSettings';
 
 const StatBarContainer = styled.section`
   display: flex;
@@ -44,10 +45,22 @@ const StatBar = ({ gameStats }: StatBarProps): ReactElement | null => {
   if (gameStats) {
     return (
       <StatBarContainer>
-        <StatItem label="Total Tries" value={gameStats.totalGames} />
-        <StatItem label="Success Rate" value={`${gameStats.successRate}%`} />
-        <StatItem label="Current Streak" value={gameStats.currentStreak} />
-        <StatItem label="Best Streak" value={gameStats.bestStreak} />
+        <StatItem
+          label={gameSettings.TotalTries}
+          value={gameStats.totalGames}
+        />
+        <StatItem
+          label={gameSettings.SuccessRate}
+          value={`${gameStats.successRate}%`}
+        />
+        <StatItem
+          label={gameSettings.CurrentStreak}
+          value={gameStats.currentStreak}
+        />
+        <StatItem
+          label={gameSettings.BestStreak}
+          value={gameStats.bestStreak}
+        />
       </StatBarContainer>
     );
   }

@@ -3,6 +3,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import Button from '@mui/material/Button';
+import gameSettings from '../../constants/gameSettings';
 
 interface HeaderProps {
   openInfoModal: (state: boolean) => void;
@@ -43,7 +44,10 @@ const Header = ({
       </Button>
     </section>
     <h1>
-      <span id="wafc">#WAFC</span>LE
+      <span style={{ color: gameSettings.TeamColor }}>
+        #{gameSettings.TeamAbbreviation}
+      </span>
+      LE
     </h1>
     <section className="statsSection">
       <ShowChartIcon

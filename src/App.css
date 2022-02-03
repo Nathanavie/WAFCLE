@@ -1,8 +1,46 @@
+:root {
+  --background-color: #0f172a;
+  --background-color-dark: #091021;
+  --background-color-translucent: #0f172a70;
+  --background-color-faint: #1a253d;
+  --text-color: #ffffff;
+  --text-color-dark: #ffffff65;
+  --correct-key-color: #538d4e;
+  --correct-key-color-dark: #538d4e50;
+  --present-key-color: #b59f3b;
+  --present-key-color-dark: #b59f3b50;
+  --absent-key-color: #00000090;
+  --absent-key-color-dark: #000000;
+  --share-button-color: #1f3ad1;
+
+  --tiny-gap: 0.3em;
+  --small-gap: 0.5em;
+  --medium-gap: 1em;
+  --thick-gap: 2em;
+  --extra-thick-gap: 3em;
+
+  --app-height: 100vh;
+  --alert-width: 13em;
+  --alert-distance-from-top: 5em;
+
+  --thin-border: 0.3px;
+  --medium-border: 1px;
+  --thick-border: 2px;
+
+  --standard-font-size: 1em;
+  --medium-font-size: 1.2em;
+  --large-font-size: 1.5em;
+  --massive-font-size: 2em;
+
+  --standard-animation-length: 1s;
+  --standard-transition-length: 0.3s;
+}
+
 .appWrapper {
   font-family: 'Open Sans', sans-serif;
-  background: #0f172a;
-  color: #ffffff;
-  height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
+  height: var(--app-height);
   display: flex;
   justify-content: center;
 }
@@ -12,8 +50,8 @@
   flex-direction: column;
   align-items: center;
   width: 28em;
-  gap: 1em;
-  padding: 0.3em 1em 1em;
+  gap: var(--medium-gap);
+  padding: var(--tiny-gap) var(--medium-gap) var(--medium-gap);
   justify-content: space-between;
   overflow-x: hidden;
 }
@@ -30,50 +68,50 @@
   cursor: pointer;
   font-weight: 600;
   background: transparent;
-  border: solid 0.3px #ffffff;
-  color: #ffffff;
-  transition: all 0.2s ease-in-out;
+  border: solid var(--thin-border) var(--text-color);
+  color: var(--text-color);
+  transition: all var(--standard-transition-length) ease-in-out;
 }
 
 .standardKey:hover {
-  background: #ffffff50;
+  background: var(--text-color-dark);
 }
 
 .correctKey {
-  background: #538d4e;
+  background: var(--correct-key-color);
 }
 
 .correctKey:hover {
-  background: #538d4e50;
+  background: var(--correct-key-color-dark);
 }
 
 .presentKey {
-  background: #b59f3b;
+  background: var(--present-key-color);
 }
 
 .presentKey:hover {
-  background: #b59f3b50;
+  background: var(--present-key-color-dark);
 }
 
 .absentKey {
-  background: #00000090;
-  color: #ffffff40;
+  background: var(--absent-key-color);
+  color: var(--text-color-dark);
 }
 
 .absentKey:hover {
-  background: #00000050;
+  background: var(--absent-key-color-dark);
 }
 
 .keyboardRow {
   display: flex;
   justify-content: center;
-  gap: 0.3em;
+  gap: var(--tiny-gap);
 }
 
 .keyboardContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: var(--small-gap);
   width: 100%;
 }
 
@@ -86,15 +124,14 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: var(--small-gap);
 }
 
 .styledRow {
   display: flex;
   justify-content: center;
-  gap: 0.5em;
-  --styledRowWidth: 100%;
-  width: var(--styledRowWidth);
+  gap: var(--small-gap);
+  width: 100%;
 }
 
 .headerContainer {
@@ -102,8 +139,8 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  padding: 0 0.3em;
-  border-bottom: solid 1px #00000050;
+  padding: 0 var(--tiny-gap);
+  border-bottom: solid var(--medium-border) var(--background-color-faint);
 }
 
 .helpSection {
@@ -114,8 +151,9 @@
 }
 
 .helpSection .hintButton {
-  background: #091021;
-  padding: 0.3em 3em;
+  background: var(--background-color-dark);
+  padding: var(--tiny-gap) var(--extra-thick-gap);
+  color: var(--text-color);
 }
 
 .helpSection,
@@ -144,15 +182,15 @@
 }
 
 .modalHeader h2 {
-  margin: 0 0 0.3em;
+  margin: 0 0 var(--tiny-gap);
 }
 
 .square {
   display: flex;
-  transition: all 0.3s ease;
+  transition: all var(--standard-transition-length) ease;
   align-items: center;
   justify-content: center;
-  border: solid 2px #ffffff65;
+  border: solid var(--thick-border) var(--text-color-dark);
   background: transparent;
   font-weight: 800;
   aspect-ratio: 1 / 1;
@@ -170,7 +208,7 @@
     background: initial;
   }
   100% {
-    background: #538d4e;
+    background: var(--correct-key-color);
   }
 }
 
@@ -179,7 +217,7 @@
     background: initial;
   }
   100% {
-    background: #b59f3b;
+    background: var(--present-key-color);
   }
 }
 
@@ -189,41 +227,38 @@
     color: initial;
   }
   100% {
-    background: #00000090;
-    color: #ffffff40;
+    background: var(--absent-key-color);
+    color: var(--text-color-dark);
   }
 }
 
 .correct {
-  animation: fadeToCorrect 1s forwards;
+  animation: fadeToCorrect var(--standard-animation-length) forwards;
 }
 
 .present {
-  animation: fadeToPresent 1s forwards;
+  animation: fadeToPresent var(--standard-animation-length) forwards;
 }
 
 .absent {
-  animation: fadeToAbsent 1s forwards;
-}
-
-#wafc {
-  color: #91c7ff;
+  animation: fadeToAbsent var(--standard-animation-length) forwards;
 }
 
 .alert {
   position: absolute;
-  top: 5em;
+  top: var(--alert-distance-from-top);
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
   text-align: center;
-  width: 13em;
+  width: var(--alert-width);
   justify-content: center;
   font-weight: 600;
 }
 .modal {
-  background: #0f172a40;
+  background: var(--background-color-translucent);
+  color: var(--text-color);
 }
 
 .modal div:nth-child(3) {
@@ -233,12 +268,12 @@
 .histogram {
   display: flex;
   flex-direction: column;
-  gap: 0.3em;
+  gap: var(--tiny-gap);
 }
 
 .progressBarContainer {
   display: flex;
-  gap: 0.3em;
+  gap: var(--tiny-gap);
 }
 
 .progressBarLabel {
@@ -253,7 +288,7 @@
 }
 
 .innerProgressBar {
-  background: #464646;
+  background: var(--background-color-faint);
   border-radius: 10px;
   padding-right: 2.5%;
 }
@@ -261,19 +296,19 @@
 .modalFooter {
   display: flex;
   justify-content: space-between;
-  gap: 2.5em;
+  gap: var(--thick-gap);
 }
 
 .newWord {
   width: 50%;
   text-align: center;
-  padding: 0.5em;
-  border-right: solid 0.3px #ffffff;
+  padding: var(--small-gap);
+  border-right: solid var(--thin-border) var(--text-color);
 }
 
 .newWord h5 {
-  font-size: 1.5em;
-  margin: 0.5em 0;
+  font-size: var(--large-font-size);
+  margin: var(--small-gap) 0;
 }
 
 .modalFooter button {
@@ -283,12 +318,12 @@
   justify-self: center;
   margin: 0 auto;
   outline: none;
-  background-color: rgb(31, 58, 209);
-  color: #ffffff;
+  background-color: var(--share-button-color);
+  color: var(--text-color);
 }
 
 .countdown {
-  font-size: 1.5em;
+  font-size: var(--large-font-size);
   font-weight: 600;
 }
 
@@ -301,7 +336,7 @@
 }
 
 .large {
-  font-size: 1.2em;
+  font-size: var(--medium-font-size);
 }
 
 .hintModal h3 {
@@ -316,10 +351,10 @@
     width: 90%;
   }
   .modalFooter {
-    margin-top: 1em;
+    margin-top: var(--medium-gap);
   }
   .newWord h5 {
-    font-size: 1em;
+    font-size: var(--medium-gap);
     margin: initial;
   }
 }
