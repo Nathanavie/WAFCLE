@@ -78,7 +78,13 @@ const StatsModal = ({
         {(isGameLost || isGameWon) && (
           <section className="modalFooter">
             <section className="newWord">
-              <h5>NEXT {gameSettings.TeamAbbreviation}LE</h5>
+              <h5>
+                NEXT{' '}
+                <span style={{ color: gameSettings.TeamColor }}>
+                  #{gameSettings.TeamAbbreviation}
+                </span>
+                LE
+              </h5>
               <Countdown className="countdown" date={tomorrow} daysInHours />
             </section>
             <Button
