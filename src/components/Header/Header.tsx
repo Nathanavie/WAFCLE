@@ -8,14 +8,12 @@ interface HeaderProps {
   openInfoModal: (state: boolean) => void;
   openStatsModal: (state: boolean) => void;
   openHintModal: (state: boolean) => void;
-  guesses: string[];
 }
 
 const Header = ({
   openInfoModal,
   openStatsModal,
   openHintModal,
-  guesses,
 }: HeaderProps): ReactElement => (
   <header className="headerContainer">
     <section className="helpSection">
@@ -28,23 +26,21 @@ const Header = ({
           }
         }}
       />
-      {guesses.length > 2 && (
-        <Button
-          variant="contained"
-          className="hintButton"
-          type="button"
-          onClick={() => openHintModal(true)}
-          endIcon={<LightbulbIcon />}
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === ' ' || e.key === 'Enter') {
-              openHintModal(true);
-            }
-          }}
-        >
-          Hint
-        </Button>
-      )}
+      <Button
+        variant="contained"
+        className="hintButton"
+        type="button"
+        onClick={() => openHintModal(true)}
+        endIcon={<LightbulbIcon />}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === ' ' || e.key === 'Enter') {
+            openHintModal(true);
+          }
+        }}
+      >
+        Hint
+      </Button>
     </section>
     <h1>
       <span id="wafc">#WAFC</span>LE
@@ -55,7 +51,7 @@ const Header = ({
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === ' ' || e.key === 'Enter') {
-            openHintModal(true);
+            openStatsModal(true);
           }
         }}
       />
