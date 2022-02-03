@@ -7,6 +7,13 @@ interface SquareProps {
   solutionLength: number;
 }
 
+const getFontSize = (solutionLength: number): string => {
+  if (solutionLength <= 5) {
+    return '1.8em';
+  }
+  return '1em';
+};
+
 const Square = ({
   value,
   status,
@@ -15,7 +22,10 @@ const Square = ({
   if (solutionLength < 5) {
     return (
       <section
-        style={{ width: `calc(80% / ${solutionLength})` }}
+        style={{
+          width: `calc(80% / ${solutionLength})`,
+          fontSize: getFontSize(solutionLength),
+        }}
         className={`square ${status}`}
       >
         {value}
@@ -24,7 +34,10 @@ const Square = ({
   }
   return (
     <section
-      style={{ width: `calc(100% / ${solutionLength})` }}
+      style={{
+        width: `calc(100% / ${solutionLength})`,
+        fontSize: getFontSize(solutionLength),
+      }}
       className={`square ${status}`}
     >
       {value}
