@@ -1,3 +1,4 @@
+import gameSettings from '../constants/gameSettings';
 import { getGuessStatuses } from './statuses';
 import { solutionIndex } from './wordUtils';
 
@@ -27,13 +28,19 @@ export const shareStatus = (
   lost: boolean,
   handleShare: () => void
 ): void => {
-  const shareString = ` WAFCLE ${solutionIndex + 1} ${
-    lost ? 'X' : guesses.length
-  }/6\n\n${generateEmojiGrid(guesses)}\n#wafc #wafcle \nhttps://wafcle.com`;
+  const shareString = ` ${gameSettings.TeamAbbreviation.toUpperCase()}LE ${
+    solutionIndex + 1
+  } ${lost ? 'X' : guesses.length}/6\n\n${generateEmojiGrid(
+    guesses
+  )}\n#${gameSettings.TeamAbbreviation.toLowerCase()} #${gameSettings.TeamAbbreviation.toLowerCase()}le \n${
+    gameSettings.GameURL
+  }`;
   if (navigator.share) {
     navigator
       .share({
-        title: `WAFCLE ${solutionIndex + 1}`,
+        title: `${gameSettings.TeamAbbreviation.toUpperCase()}LE ${
+          solutionIndex + 1
+        }`,
         text: shareString,
       })
       .then(() => {

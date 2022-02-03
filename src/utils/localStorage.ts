@@ -1,4 +1,6 @@
-const gameStateKey = 'wafcleState';
+import gameSettings from '../constants/gameSettings';
+
+const gameStateKey = `${gameSettings.TeamAbbreviation}leState`;
 
 type StoredGameState = {
   guesses: string[];
@@ -16,7 +18,7 @@ export const loadGameStateFromLocalStorage = (): StoredGameState | null => {
   return state ? (JSON.parse(state) as StoredGameState) : null;
 };
 
-const gameStatKey = 'wafcleStats';
+const gameStatKey = `${gameSettings.TeamAbbreviation}leStats`;
 
 export type GameStats = {
   winDistribution: number[];
