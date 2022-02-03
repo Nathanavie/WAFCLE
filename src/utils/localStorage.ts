@@ -1,6 +1,6 @@
 import gameSettings from '../constants/gameSettings';
 
-const gameStateKey = `${gameSettings.TeamAbbreviation}leState`;
+const gameStateKey = `${gameSettings.TeamAbbreviation.toLowerCase()}leState`;
 
 type StoredGameState = {
   guesses: string[];
@@ -18,7 +18,7 @@ export const loadGameStateFromLocalStorage = (): StoredGameState | null => {
   return state ? (JSON.parse(state) as StoredGameState) : null;
 };
 
-const gameStatKey = `${gameSettings.TeamAbbreviation}leStats`;
+const gameStatKey = `${gameSettings.TeamAbbreviation.toLowerCase()}leStats`;
 
 export type GameStats = {
   winDistribution: number[];
