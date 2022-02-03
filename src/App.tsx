@@ -74,7 +74,13 @@ const App = (): ReactElement => {
   };
 
   const onEnter = () => {
-    if (isGameWon || isGameLost) {
+    if (
+      isGameWon ||
+      isGameLost ||
+      isHintModalOpen ||
+      isInfoModalOpen ||
+      isStatsModalOpen
+    ) {
       return;
     }
     if (!(currentGuess.length === solution.length)) {

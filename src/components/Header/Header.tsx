@@ -19,7 +19,15 @@ const Header = ({
 }: HeaderProps): ReactElement => (
   <header className="headerContainer">
     <section className="helpSection">
-      <HelpIcon onClick={() => openInfoModal(true)} />
+      <HelpIcon
+        onClick={() => openInfoModal(true)}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === ' ' || e.key === 'Enter') {
+            openHintModal(true);
+          }
+        }}
+      />
       {guesses.length > 2 && (
         <Button
           variant="contained"
@@ -27,6 +35,12 @@ const Header = ({
           type="button"
           onClick={() => openHintModal(true)}
           endIcon={<LightbulbIcon />}
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === ' ' || e.key === 'Enter') {
+              openHintModal(true);
+            }
+          }}
         >
           Hint
         </Button>
@@ -36,7 +50,15 @@ const Header = ({
       <span id="wafc">#WAFC</span>LE
     </h1>
     <section className="statsSection">
-      <ShowChartIcon onClick={() => openStatsModal(true)} />
+      <ShowChartIcon
+        onClick={() => openStatsModal(true)}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === ' ' || e.key === 'Enter') {
+            openHintModal(true);
+          }
+        }}
+      />
     </section>
   </header>
 );
