@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import ShareIcon from '@mui/icons-material/Share';
 import CloseIcon from '@mui/icons-material/Close';
 import { GameStats } from '../../utils/localStorage';
-import { tomorrow } from '../../utils/wordUtils';
+import { solutionIndex, solution, tomorrow } from '../../utils/wordUtils';
 import { shareStatus } from '../../utils/share';
 import StatBar from '../Stats/StatBar';
 import Histogram from '../Stats/Histogram';
@@ -61,10 +61,15 @@ const StatsModal = ({
     <Modal className="modal" open={isOpen} onClose={handleClose}>
       <Box sx={style}>
         <header className="modalHeader">
-          <h3>Statistics</h3>
+          <h2>Statistics</h2>
           <CloseIcon role="button" onClick={handleClose} />
         </header>
         <Typography>
+          {(isGameLost || isGameWon) && (
+            <h4 className="bold center">
+              WAFCLE {solutionIndex + 1} answer: {solution}
+            </h4>
+          )}
           <StatBar gameStats={gameStats} />
           <h4>Guess Distribution</h4>
           <Histogram gameStats={gameStats} />
