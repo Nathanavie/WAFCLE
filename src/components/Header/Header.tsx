@@ -26,7 +26,7 @@ const Header = ({
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === ' ' || e.key === 'Enter') {
-            openHintModal(true);
+            window.location.href = 'https://footballwordles.netlify.app/';
           }
         }}
       />
