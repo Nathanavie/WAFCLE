@@ -5,6 +5,7 @@ const gameStateKey = `${gameSettings.TeamAbbreviation.toLowerCase()}leState`;
 type StoredGameState = {
   guesses: string[];
   solution: string;
+  lastActive: string;
 };
 
 export const saveGameStateToLocalStorage = (

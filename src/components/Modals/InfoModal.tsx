@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
 import Square from '../Grid/Square/Square';
+import gameSettings from '../../constants/gameSettings';
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -30,12 +31,13 @@ const InfoModal = ({ isOpen, handleClose }: InfoModalProps): ReactElement => (
         <CloseIcon role="button" onClick={handleClose} />
       </header>
       <Typography>
-        <p>
-          Guess the word in 6 tries. After each guess, the color of the tiles
-          will change to show how close your guess was to the word.
-        </p>
-        <p className="bold center large">
-          Each guess must be a valid surname of a current Wigan Squad player
+        <p>Guess the word in 6 tries.</p>
+        <p
+          className="bold center large"
+          style={{ color: gameSettings.TeamColor }}
+        >
+          Each guess must be a valid surname of a Wigan Squad player from either
+          first team, u23s, or u18s since the 2018/2019 season
         </p>
         <section className="squareRow">
           <Square solutionLength={5} value="W" status="correct" />

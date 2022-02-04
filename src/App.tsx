@@ -41,7 +41,19 @@ const App = (): ReactElement => {
   const [stats, setStats] = useState(() => loadStats());
 
   useEffect(() => {
-    saveGameStateToLocalStorage({ guesses, solution });
+    const previousGameState = loadGameStateFromLocalStorage();
+    if (
+      !previousGameState ||
+      (previousGameState && !previousGameState.lastActive)
+    ) {
+      setIsInfoModalOpen(true);
+    }
+    const timeNow = String(new Date());
+    saveGameStateToLocalStorage({
+      guesses,
+      solution,
+      lastActive: timeNow || '',
+    });
   }, [guesses]);
 
   useEffect(() => {

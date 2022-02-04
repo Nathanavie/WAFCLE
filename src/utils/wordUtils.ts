@@ -1,7 +1,5 @@
 import { players, PlayerInfoType } from '../constants/players';
 import { validWords } from '../constants/words';
-import { acceptedWords } from '../constants/standardWordsList';
-import { originalWordleWords } from '../constants/wordleWordList';
 
 export const isWordInWordList = (word: string): boolean =>
   players.some(
@@ -9,13 +7,16 @@ export const isWordInWordList = (word: string): boolean =>
   ) ||
   validWords.some(
     (validWord) => validWord.toLowerCase() === word.toLowerCase()
-  ) ||
-  acceptedWords.some(
-    (validWord) => validWord.toLowerCase() === word.toLowerCase()
-  ) ||
-  originalWordleWords.some(
-    (validWord) => validWord.toLowerCase() === word.toLowerCase()
   );
+// TODO: Add these when adding optional normal words
+// import { acceptedWords } from '../constants/standardWordsList';
+// import { originalWordleWords } from '../constants/wordleWordList';
+// acceptedWords.some(
+//   (validWord) => validWord.toLowerCase() === word.toLowerCase()
+// ) ||
+// originalWordleWords.some(
+//   (validWord) => validWord.toLowerCase() === word.toLowerCase()
+// );
 
 export const getWordOfDay = (): {
   solution: string;
