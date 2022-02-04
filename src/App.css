@@ -262,6 +262,7 @@
 }
 
 .modal div:nth-child(3) {
+  background: var(--background-color-dark);
   max-width: 80vw;
 }
 

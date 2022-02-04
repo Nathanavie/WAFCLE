@@ -17,7 +17,6 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: '#0f172a',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
@@ -31,13 +30,12 @@ const InfoModal = ({ isOpen, handleClose }: InfoModalProps): ReactElement => (
         <CloseIcon role="button" onClick={handleClose} />
       </header>
       <Typography>
-        <p>Guess the word in 6 tries.</p>
         <p
           className="bold center large"
           style={{ color: gameSettings.TeamColor }}
         >
-          Each guess must be a valid surname of a Wigan Squad player from either
-          first team, u23s, or u18s since the 2018/2019 season
+          Each guess must be a valid surname of a {gameSettings.Team} Squad
+          player since the {gameSettings.OldestSeason} season
         </p>
         <section className="squareRow">
           <Square solutionLength={5} value="W" status="correct" />

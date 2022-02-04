@@ -13,6 +13,7 @@ import {
   loadGameStateFromLocalStorage,
 } from './utils/localStorage';
 import { loadStats, addStatsForCompletedGame } from './utils/stats';
+import gameSettings from './constants/gameSettings';
 
 const App = (): ReactElement => {
   const [isGameWon, setIsGameWon] = useState(false);
@@ -58,7 +59,7 @@ const App = (): ReactElement => {
 
   useEffect(() => {
     if (isGameWon) {
-      setSuccessAlert('Up the tics!');
+      setSuccessAlert(gameSettings.CelebrationMessage);
       setTimeout(() => {
         setSuccessAlert('');
         setIsStatsModalOpen(true);
