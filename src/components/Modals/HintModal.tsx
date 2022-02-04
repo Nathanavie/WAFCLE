@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
 import { solutionInfo } from '../../utils/wordUtils';
+import gameSettings from '../../constants/gameSettings';
 
 interface HintModalProps {
   isOpen: boolean;
@@ -38,7 +39,7 @@ const HintModal = ({ isOpen, handleClose }: HintModalProps): ReactElement => (
         <h3>Which squad are they in?</h3>
         <p>{solutionInfo.team}</p>
         <p>
-          They last played for Wigan in the
+          They last played for {gameSettings.Team} in the
           <span className="bold"> {solutionInfo.mostRecentYear} </span> season
         </p>
       </Typography>
