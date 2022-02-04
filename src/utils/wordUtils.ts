@@ -1,11 +1,19 @@
 import { players, PlayerInfoType } from '../constants/players';
 import { validWords } from '../constants/words';
+import { acceptedWords } from '../constants/standardWordsList';
+import { originalWordleWords } from '../constants/wordleWordList';
 
 export const isWordInWordList = (word: string): boolean =>
   players.some(
     ({ secondName }) => secondName.toLowerCase() === word.toLowerCase()
   ) ||
   validWords.some(
+    (validWord) => validWord.toLowerCase() === word.toLowerCase()
+  ) ||
+  acceptedWords.some(
+    (validWord) => validWord.toLowerCase() === word.toLowerCase()
+  ) ||
+  originalWordleWords.some(
     (validWord) => validWord.toLowerCase() === word.toLowerCase()
   );
 
