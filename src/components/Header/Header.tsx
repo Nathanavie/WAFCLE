@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import HelpIcon from '@mui/icons-material/Help';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Button from '@mui/material/Button';
 import gameSettings from '../../constants/gameSettings';
 
@@ -18,8 +19,10 @@ const Header = ({
 }: HeaderProps): ReactElement => (
   <header className="headerContainer">
     <section className="helpSection">
-      <HelpIcon
-        onClick={() => openInfoModal(true)}
+      <ArrowBackIosNewIcon
+        onClick={() => {
+          window.location.href = 'https://footballwordles.netlify.app/';
+        }}
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === ' ' || e.key === 'Enter') {
@@ -27,6 +30,7 @@ const Header = ({
           }
         }}
       />
+
       <Button
         variant="contained"
         className="hintButton"
@@ -50,6 +54,15 @@ const Header = ({
       LE
     </h1>
     <section className="statsSection">
+      <HelpIcon
+        onClick={() => openInfoModal(true)}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === ' ' || e.key === 'Enter') {
+            openHintModal(true);
+          }
+        }}
+      />
       <ShowChartIcon
         onClick={() => openStatsModal(true)}
         tabIndex={0}
