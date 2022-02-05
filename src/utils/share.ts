@@ -1,3 +1,4 @@
+import { isMobile } from 'react-device-detect';
 import gameSettings from '../constants/gameSettings';
 import { getGuessStatuses } from './statuses';
 import { solutionIndex } from './wordUtils';
@@ -35,7 +36,7 @@ export const shareStatus = (
   )}\n#${gameSettings.TeamAbbreviation.toLowerCase()} #${gameSettings.TeamAbbreviation.toLowerCase()}le \n${
     gameSettings.GameURL
   }`;
-  if (navigator.share) {
+  if (navigator.share && isMobile) {
     navigator
       .share({
         title: `${gameSettings.TeamAbbreviation.toUpperCase()}LE ${
