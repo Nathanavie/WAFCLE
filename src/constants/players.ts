@@ -671,6 +671,13 @@ export const players: PlayerInfoType[] = [
     team: Teams.FirstTeam,
   },
   {
+    firstName: 'Leon',
+    mostRecentYear: Seasons.EighteenNineteen,
+    position: Positions.Forward,
+    secondName: 'Clarke',
+    team: Teams.FirstTeam,
+  },
+  {
     firstName: 'Dan',
     mostRecentYear: Seasons.TwentyOneTwentyTwo,
     position: Positions.Defender,
