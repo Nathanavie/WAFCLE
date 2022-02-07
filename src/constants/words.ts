@@ -55,4 +55,5 @@ export const validWords = [
   'Baningime',
   'Adams',
   'Sobowale',
+  'Gyollai',
 ];
