@@ -188,6 +188,13 @@ export const players: PlayerInfoType[] = [
     team: Teams.FirstTeam,
   },
   {
+    firstName: 'William',
+    mostRecentYear: Seasons.EighteenNineteen,
+    position: Positions.Forward,
+    secondName: 'Grigg',
+    team: Teams.FirstTeam,
+  },
+  {
     firstName: 'Dan',
     mostRecentYear: Seasons.EighteenNineteen,
     position: Positions.Goalkeeper,
@@ -391,6 +398,13 @@ export const players: PlayerInfoType[] = [
     team: Teams.U23s,
   },
   {
+    firstName: 'Dan',
+    mostRecentYear: Seasons.EighteenNineteen,
+    position: Positions.Defender,
+    secondName: 'Burn',
+    team: Teams.FirstTeam,
+  },
+  {
     firstName: 'Corey',
     mostRecentYear: Seasons.TwentyTwentyTwentyOne,
     position: Positions.Defender,
@@ -489,6 +503,13 @@ export const players: PlayerInfoType[] = [
     team: Teams.FirstTeam,
   },
   {
+    firstName: 'Bright',
+    mostRecentYear: Seasons.NineteenTwenty,
+    position: Positions.Forward,
+    secondName: 'Enobakhare',
+    team: Teams.FirstTeam,
+  },
+  {
     firstName: 'Jan',
     mostRecentYear: Seasons.NineteenTwenty,
     position: Positions.Forward,
@@ -508,6 +529,13 @@ export const players: PlayerInfoType[] = [
     position: Positions.Defender,
     secondName: 'Byrne',
     team: Teams.FirstTeam,
+  },
+  {
+    firstName: 'Ollie',
+    mostRecentYear: Seasons.TwentyTwentyTwentyOne,
+    position: Positions.Forward,
+    secondName: 'Crankshaw',
+    team: Teams.U23s,
   },
   {
     firstName: 'Shaun',
@@ -535,6 +563,13 @@ export const players: PlayerInfoType[] = [
     mostRecentYear: Seasons.EighteenNineteen,
     position: Positions.Forward,
     secondName: 'Walker',
+    team: Teams.FirstTeam,
+  },
+  {
+    firstName: 'Alex',
+    mostRecentYear: Seasons.EighteenNineteen,
+    position: Positions.Defender,
+    secondName: 'Bruce',
     team: Teams.FirstTeam,
   },
   {
@@ -626,6 +661,13 @@ export const players: PlayerInfoType[] = [
     mostRecentYear: Seasons.EighteenNineteen,
     position: Positions.Forward,
     secondName: 'McManaman',
+    team: Teams.FirstTeam,
+  },
+  {
+    firstName: 'Viv',
+    mostRecentYear: Seasons.TwentyTwentyTwentyOne,
+    position: Positions.Forward,
+    secondName: 'Solomon-Otabor',
     team: Teams.FirstTeam,
   },
   {
