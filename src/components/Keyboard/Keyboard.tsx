@@ -3,6 +3,7 @@ import Key from './Key';
 import { getStatuses } from '../../utils/statuses';
 import { KeyValue } from '../../utils/keyboard';
 import keyList from './keyList';
+import { solution } from '../../utils/wordUtils';
 
 interface KeyboardProps {
   onChar: (value: string) => void;
@@ -37,7 +38,10 @@ const Keyboard = ({
         onDelete();
       } else {
         const key = e.key.toUpperCase();
-        if (key.length === 1 && key >= 'A' && key <= 'Z') {
+        if (
+          (key.length === 1 && key >= 'A' && key <= 'Z') ||
+          (key.length === 1 && key === '-')
+        ) {
           onChar(key);
         }
       }
@@ -50,15 +54,20 @@ const Keyboard = ({
 
   const keyboardLayout = keyList.map((row, i) => (
     <section className="keyboardRow" key={i}>
-      {row.map(({ key, width }) => (
-        <Key
-          key={key}
-          value={key}
-          width={width}
-          onClick={onClick}
-          status={charStatuses[key]}
-        />
-      ))}
+      {row.map(({ key, width }) => {
+        if (!solution.includes('-') && key === '-') {
+          return null;
+        }
+        return (
+          <Key
+            key={key}
+            value={key}
+            width={width}
+            onClick={onClick}
+            status={charStatuses[key]}
+          />
+        );
+      })}
     </section>
   ));
 

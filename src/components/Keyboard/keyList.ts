@@ -78,6 +78,10 @@ const keyList = [
       key: 'L',
       width: '40',
     },
+    {
+      key: '-',
+      width: '40',
+    },
   ],
   [
     {
