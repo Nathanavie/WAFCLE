@@ -34,7 +34,7 @@ export const shareStatus = (
   } ${lost ? 'X' : guesses.length}/6\n\n${generateEmojiGrid(
     guesses
   )}\n#${gameSettings.TeamAbbreviation.toLowerCase()} #${gameSettings.TeamAbbreviation.toLowerCase()}le \n${
-    gameSettings.GameURL
+    window.location.href
   }`;
   if (navigator.share && isMobile) {
     navigator
