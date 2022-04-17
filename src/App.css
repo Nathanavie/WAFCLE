@@ -27,6 +27,7 @@
   --medium-border: 1px;
   --thick-border: 2px;
 
+  --tiny-font-size: 0.7em;
   --standard-font-size: 1em;
   --medium-font-size: 1.2em;
   --large-font-size: 1.5em;
@@ -346,6 +347,10 @@
 }
 .hintModal p {
   margin-top: 5px;
+}
+
+.tiny {
+  font-size: var(--tiny-font-size);
 }
 
 @media (max-width: 768px) {

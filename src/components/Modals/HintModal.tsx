@@ -9,6 +9,7 @@ import gameSettings from '../../constants/gameSettings';
 interface HintModalProps {
   isOpen: boolean;
   handleClose: () => void;
+  numberOfGuesses: number;
 }
 
 const style = {
@@ -22,27 +23,47 @@ const style = {
   p: 4,
 };
 
-const HintModal = ({ isOpen, handleClose }: HintModalProps): ReactElement => (
+const HintModal = ({
+  isOpen,
+  handleClose,
+  numberOfGuesses,
+}: HintModalProps): ReactElement => (
   <Modal className="modal hintModal" open={isOpen} onClose={handleClose}>
     <Box sx={style}>
       <header className="modalHeader">
         <h2>Need a hint?</h2>
         <CloseIcon role="button" onClick={handleClose} />
       </header>
-      <Typography>
-        <p>
-          Here is a hint to help you get the right answer before you run out of
-          guesses!
-        </p>
-        <h3>Position</h3>
-        <p>{solutionInfo.position}</p>
-        <h3>Which squad are they in?</h3>
-        <p>{solutionInfo.team}</p>
-        <p>
-          They last played for {gameSettings.Team} in the
-          <span className="bold"> {solutionInfo.mostRecentYear} </span> season
-        </p>
-      </Typography>
+      <>
+        {numberOfGuesses < 1 ? (
+          <Typography>
+            <p>You have to make at least 2 guesses to get a hint!</p>
+            <p>
+              The player can be any* Wigan player, u23s or first team since
+              2016/2017 season!
+            </p>
+            <span className="tiny">
+              <em>Some older squad players may not be in the checked list</em>
+            </span>
+          </Typography>
+        ) : (
+          <Typography>
+            <p>
+              Here is a hint to help you get the right answer before you run out
+              of guesses!
+            </p>
+            <h3>Position</h3>
+            <p>{solutionInfo.position}</p>
+            <h3>Which squad are they in?</h3>
+            <p>{solutionInfo.team}</p>
+            <p>
+              They last played for {gameSettings.Team} in the
+              <span className="bold"> {solutionInfo.mostRecentYear} </span>{' '}
+              season
+            </p>
+          </Typography>
+        )}
+      </>
     </Box>
   </Modal>
 );

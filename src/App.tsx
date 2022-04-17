@@ -167,6 +167,7 @@ const App = (): ReactElement => {
       <HintModal
         isOpen={isHintModalOpen}
         handleClose={() => setIsHintModalOpen(false)}
+        numberOfGuesses={guesses.length}
       />
       <StatsModal
         isOpen={isStatsModalOpen}

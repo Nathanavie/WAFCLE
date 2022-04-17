@@ -19,7 +19,7 @@ const gameSettings: GameSettings = {
   BestStreak: 'Best Streak',
   TeamColor: '#91c7ff',
   CelebrationMessage: 'Up the tics!',
-  OldestSeason: '2018/2019',
+  OldestSeason: '2016/2017',
   GameURL: 'https://wafcle.com',
 };
 export default gameSettings;
