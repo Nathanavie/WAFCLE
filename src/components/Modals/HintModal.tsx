@@ -39,8 +39,8 @@ const HintModal = ({
           <Typography>
             <p>You have to make at least 2 guesses to get a hint!</p>
             <p>
-              The player can be any* Wigan player, u23s or first team since
-              2016/2017 season!
+              The player can be any Wigan player, u23s or first team since
+              <span className="bold">{gameSettings.OldestSeason}</span> season!
             </p>
             <span className="tiny">
               <em>Some older squad players may not be in the checked list</em>
