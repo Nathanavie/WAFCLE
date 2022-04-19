@@ -567,7 +567,7 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Matt',
-    mostRecentYear: Seasons.EighteenNineteen,
+    mostRecentYear: Seasons.SixteenSeventeen,
     position: Positions.Goalkeeper,
     secondName: 'Gilks',
     team: Teams.FirstTeam,
@@ -952,7 +952,7 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Stephen',
-    mostRecentYear: Seasons.EighteenNineteen,
+    mostRecentYear: Seasons.SixteenSeventeen,
     position: Positions.Defender,
     secondName: 'Warnock',
     team: Teams.FirstTeam,
@@ -1015,7 +1015,7 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Gabriel',
-    mostRecentYear: Seasons.EighteenNineteen,
+    mostRecentYear: Seasons.SixteenSeventeen,
     position: Positions.Forward,
     secondName: 'Obertan',
     team: Teams.FirstTeam,
@@ -1036,7 +1036,7 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Jussi',
-    mostRecentYear: Seasons.EighteenNineteen,
+    mostRecentYear: Seasons.SixteenSeventeen,
     position: Positions.Goalkeeper,
     secondName: 'Jaaskelainen',
     team: Teams.FirstTeam,

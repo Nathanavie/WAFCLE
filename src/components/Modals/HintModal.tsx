@@ -61,6 +61,8 @@ const HintModal = ({
               <span className="bold"> {solutionInfo.mostRecentYear} </span>{' '}
               season
             </p>
+            <h3>First name</h3>
+            <p>{solutionInfo.firstName}</p>
           </Typography>
         )}
       </>
