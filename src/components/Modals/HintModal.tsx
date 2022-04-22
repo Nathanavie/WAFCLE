@@ -34,38 +34,33 @@ const HintModal = ({
         <h2>Need a hint?</h2>
         <CloseIcon role="button" onClick={handleClose} />
       </header>
-      <>
-        {numberOfGuesses < 1 ? (
-          <Typography>
-            <p>You have to make at least 2 guesses to get a hint!</p>
-            <p>
-              The player can be any Wigan player, u23s or first team since
-              <span className="bold">{gameSettings.OldestSeason}</span> season!
-            </p>
-            <span className="tiny">
-              <em>Some older squad players may not be in the checked list</em>
-            </span>
-          </Typography>
-        ) : (
-          <Typography>
-            <p>
-              Here is a hint to help you get the right answer before you run out
-              of guesses!
-            </p>
-            <h3>Position</h3>
-            <p>{solutionInfo.position}</p>
-            <h3>Which squad are they in?</h3>
-            <p>{solutionInfo.team}</p>
-            <p>
-              They last played for {gameSettings.Team} in the
-              <span className="bold"> {solutionInfo.mostRecentYear} </span>{' '}
-              season
-            </p>
+      <Typography>
+        <p>
+          Here is a hint to help you get the right answer before you run out of
+          guesses!
+        </p>
+        <h3>Position</h3>
+        <p>{solutionInfo.position}</p>
+        <h3>Which squad are they in?</h3>
+        <p>{solutionInfo.team}</p>
+        {numberOfGuesses > 1 ? (
+          <>
             <h3>First name</h3>
             <p>{solutionInfo.firstName}</p>
-          </Typography>
-        )}
-      </>
+          </>
+        ) : null}
+        <p>
+          They last played for {gameSettings.Team} in the
+          <span className="bold"> {solutionInfo.mostRecentYear} </span> season
+        </p>
+        {numberOfGuesses < 1 ? (
+          <p className="tiny">
+            <em>
+              Make at least 2 guesses and get the first name of the player!
+            </em>
+          </p>
+        ) : null}
+      </Typography>
     </Box>
   </Modal>
 );
