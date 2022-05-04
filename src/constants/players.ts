@@ -679,7 +679,7 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Kaiyne',
-    mostRecentYear: Seasons.EighteenNineteen,
+    mostRecentYear: Seasons.SixteenSeventeen,
     position: Positions.Forward,
     secondName: 'Woolery',
     team: Teams.FirstTeam,
@@ -700,14 +700,14 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Jack',
-    mostRecentYear: Seasons.EighteenNineteen,
+    mostRecentYear: Seasons.SixteenSeventeen,
     position: Positions.Defender,
     secondName: 'Hendry',
     team: Teams.FirstTeam,
   },
   {
     firstName: 'Reece',
-    mostRecentYear: Seasons.EighteenNineteen,
+    mostRecentYear: Seasons.SeventeenEighteen,
     position: Positions.Defender,
     secondName: 'James',
     team: Teams.FirstTeam,
@@ -728,7 +728,7 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Jordan',
-    mostRecentYear: Seasons.NineteenTwenty,
+    mostRecentYear: Seasons.EighteenNineteen,
     position: Positions.Midfielder,
     secondName: 'Flores',
     team: Teams.FirstTeam,
