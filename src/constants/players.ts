@@ -742,7 +742,7 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Adam',
-    mostRecentYear: Seasons.EighteenNineteen,
+    mostRecentYear: Seasons.SixteenSeventeen,
     position: Positions.Goalkeeper,
     secondName: 'Bogdan',
     team: Teams.FirstTeam,
@@ -777,7 +777,7 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Gary',
-    mostRecentYear: Seasons.NineteenTwenty,
+    mostRecentYear: Seasons.TwentyTwentyTwentyOne,
     position: Positions.Midfielder,
     secondName: 'Roberts',
     team: Teams.FirstTeam,
@@ -805,7 +805,7 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Josh',
-    mostRecentYear: Seasons.NineteenTwenty,
+    mostRecentYear: Seasons.SeventeenEighteen,
     position: Positions.Midfielder,
     secondName: 'Laurent',
     team: Teams.FirstTeam,
@@ -819,14 +819,14 @@ export const players: PlayerInfoType[] = [
   },
   {
     firstName: 'Jakob',
-    mostRecentYear: Seasons.EighteenNineteen,
+    mostRecentYear: Seasons.SixteenSeventeen,
     position: Positions.Goalkeeper,
     secondName: 'Haugaard',
     team: Teams.FirstTeam,
   },
   {
     firstName: 'Alex',
-    mostRecentYear: Seasons.NineteenTwenty,
+    mostRecentYear: Seasons.SixteenSeventeen,
     position: Positions.Midfielder,
     secondName: 'Gilbey',
     team: Teams.FirstTeam,
@@ -843,13 +843,6 @@ export const players: PlayerInfoType[] = [
     mostRecentYear: Seasons.EighteenNineteen,
     position: Positions.Midfielder,
     secondName: 'Byrne',
-    team: Teams.FirstTeam,
-  },
-  {
-    firstName: 'Adam',
-    mostRecentYear: Seasons.EighteenNineteen,
-    position: Positions.Forward,
-    secondName: 'Le Fondre',
     team: Teams.FirstTeam,
   },
   {
